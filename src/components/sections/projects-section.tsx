@@ -43,10 +43,10 @@ export function ProjectsSection() {
                 aria-pressed={isActive}
                 onClick={() => setActiveCategory(category)}
                 className={[
-                  "inline-flex min-h-11 items-center rounded-full border px-5 text-sm font-semibold transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950",
+                  "inline-flex min-h-11 items-center rounded-full border px-5 text-sm font-semibold transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--focus-offset)]",
                   isActive
-                    ? "border-cyan-300/35 bg-cyan-300/15 text-cyan-50 shadow-[0_20px_45px_-30px_rgba(34,211,238,0.65)]"
-                    : "border-white/10 bg-white/[0.03] text-slate-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-white",
+                    ? "border-[color:var(--accent-strong)] bg-[color:var(--accent-soft)] text-[color:var(--accent-foreground)] shadow-[0_20px_45px_-30px_rgba(34,211,238,0.32)]"
+                    : "border-[color:var(--border-subtle)] bg-[color:var(--surface-card)] text-[color:var(--text-muted)] hover:border-[color:var(--border-strong)] hover:bg-[color:var(--surface-card-strong)] hover:text-[color:var(--text-primary)]",
                 ]
                   .filter(Boolean)
                   .join(" ")}
@@ -92,11 +92,13 @@ export function ProjectsSection() {
         <motion.div
           layout
           initial={false}
-          className="rounded-[28px] border border-white/10 bg-white/[0.03] px-5 py-4 text-sm text-slate-300"
+          className="rounded-[28px] border border-[color:var(--border-subtle)] bg-[color:var(--surface-card)] px-5 py-4 text-sm text-[color:var(--text-muted)]"
         >
-          <span className="font-semibold text-white">{filteredProjects.length}</span>{" "}
+          <span className="font-semibold text-[color:var(--text-primary)]">
+            {filteredProjects.length}
+          </span>{" "}
           proyecto{filteredProjects.length === 1 ? "" : "s"} en la categoría{" "}
-          <span className="font-semibold text-cyan-100">{activeCategory}</span>.
+          <span className="font-semibold text-[color:var(--accent)]">{activeCategory}</span>.
         </motion.div>
       </div>
     </SectionShell>

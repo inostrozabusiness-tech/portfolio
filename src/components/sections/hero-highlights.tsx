@@ -10,12 +10,14 @@ export function HeroHighlights({ items }: HeroHighlightsProps) {
       {items.map((item) => (
         <article
           key={item.title}
-          className="rounded-[28px] border border-white/10 bg-white/[0.06] p-5 backdrop-blur-xl shadow-[0_24px_90px_-48px_rgba(56,189,248,0.45)]"
+          className="rounded-[28px] border border-[color:var(--border-subtle)] bg-[color:var(--surface-card-strong)] p-5 backdrop-blur-xl shadow-[var(--highlight-shadow)]"
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200/90">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[color:var(--accent)]">
             {item.title}
           </p>
-          <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+          <p className="mt-3 text-sm leading-6 text-[color:var(--text-muted)]">
+            {item.description}
+          </p>
         </article>
       ))}
     </div>

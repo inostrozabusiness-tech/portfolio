@@ -15,10 +15,12 @@ export function CertificationsSection() {
         {certifications.items.map((item) => (
           <article
             key={item.title}
-            className="rounded-3xl border border-white/10 bg-white/[0.04] p-8"
+            className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-card)] p-8"
           >
-            <h3 className="text-xl font-medium text-white">{item.title}</h3>
-            <p className="mt-3 text-base leading-7 text-slate-300">{item.description}</p>
+            <h3 className="text-xl font-medium text-[color:var(--text-primary)]">{item.title}</h3>
+            <p className="mt-3 text-base leading-7 text-[color:var(--text-muted)]">
+              {item.description}
+            </p>
           </article>
         ))}
       </div>

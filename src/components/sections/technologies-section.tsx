@@ -16,9 +16,9 @@ export function TechnologiesSection() {
         {technologies.groups.map((group) => (
           <article
             key={group.title}
-            className="rounded-3xl border border-white/10 bg-white/[0.04] p-6"
+            className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-card)] p-6"
           >
-            <h3 className="text-lg font-medium text-white">{group.title}</h3>
+            <h3 className="text-lg font-medium text-[color:var(--text-primary)]">{group.title}</h3>
             <div className="mt-5 flex flex-wrap gap-3">
               {group.items.map((item) => (
                 <Tag key={item}>{item}</Tag>

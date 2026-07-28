@@ -34,9 +34,9 @@ export function HeroBackground() {
 
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_32%),radial-gradient(circle_at_80%_20%,_rgba(168,85,247,0.18),_transparent_26%),linear-gradient(180deg,_rgba(2,6,23,0.92)_0%,_rgba(2,6,23,1)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:72px_72px] opacity-[0.18]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(2,6,23,0.12)_45%,_rgba(2,6,23,0.82)_100%)]" />
+      <div className="theme-hero-base absolute inset-0" />
+      <div className="theme-grid-overlay absolute inset-0 bg-[size:72px_72px] opacity-[0.18]" />
+      <div className="theme-hero-vignette absolute inset-0" />
 
       {glowOrbs.map((orb) => (
         <motion.span
@@ -58,7 +58,7 @@ export function HeroBackground() {
       {particles.map((particle) => (
         <motion.span
           key={`${particle.left}-${particle.top}`}
-          className="absolute h-1.5 w-1.5 rounded-full bg-cyan-100/70 shadow-[0_0_14px_rgba(125,211,252,0.7)]"
+          className="absolute h-1.5 w-1.5 rounded-full bg-[color:var(--accent)] opacity-70 shadow-[0_0_14px_rgba(125,211,252,0.7)]"
           style={{ left: particle.left, top: particle.top }}
           animate={
             shouldReduceMotion

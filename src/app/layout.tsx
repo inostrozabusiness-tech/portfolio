@@ -5,6 +5,25 @@ import { siteConfig } from "@/data/site";
 import { getPersonSchema } from "@/lib/schema";
 import "./globals.css";
 
+const themeInitializerScript = `
+(() => {
+  const storageKey = "portfolio-theme";
+  const root = document.documentElement;
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const storedTheme = window.localStorage.getItem(storageKey);
+  const themeMode = storedTheme === "light" || storedTheme === "dark" || storedTheme === "system"
+    ? storedTheme
+    : "system";
+  const resolvedTheme = themeMode === "system"
+    ? (mediaQuery.matches ? "dark" : "light")
+    : themeMode;
+
+  root.dataset.themeMode = themeMode;
+  root.dataset.theme = resolvedTheme;
+  root.style.colorScheme = resolvedTheme;
+})();
+`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -81,7 +100,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: siteConfig.themeColor,
-  colorScheme: "dark",
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({
@@ -92,20 +111,25 @@ export default function RootLayout({
   const personSchema = getPersonSchema();
 
   return (
-    <html lang={siteConfig.language} className="scroll-smooth">
-      <body className="bg-slate-950 text-slate-100 antialiased">
+    <html
+      lang={siteConfig.language}
+      className="scroll-smooth"
+      suppressHydrationWarning
+    >
+      <script dangerouslySetInnerHTML={{ __html: themeInitializerScript }} />
+      <body className="bg-background text-foreground antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
         <a
           href="#hero"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-slate-950"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-[color:var(--button-primary-background)] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-[color:var(--button-primary-foreground)]"
         >
           Saltar al contenido principal
         </a>
-        <div className="relative min-h-screen bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.16),_transparent_38%),linear-gradient(180deg,_rgba(15,23,42,1)_0%,_rgba(2,6,23,1)_100%)]">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.06)_1px,transparent_1px)] bg-[size:80px_80px] opacity-20" />
+        <div className="theme-page relative min-h-screen">
+          <div className="theme-grid-overlay absolute inset-0 bg-[size:80px_80px] opacity-20" />
           <div className="relative">
             <SiteHeader />
             {children}

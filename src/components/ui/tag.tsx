@@ -7,7 +7,7 @@ export function Tag({ children, className = "" }: TagProps) {
   return (
     <span
       className={[
-        "inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200",
+        "inline-flex rounded-full border border-[color:var(--border-subtle)] bg-[color:var(--surface-card)] px-4 py-2 text-sm text-[color:var(--text-secondary)]",
         className,
       ]
         .filter(Boolean)

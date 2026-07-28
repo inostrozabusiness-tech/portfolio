@@ -6,11 +6,11 @@ type ButtonLinkProps = ComponentPropsWithoutRef<"a"> & {
 
 const variantClasses: Record<NonNullable<ButtonLinkProps["variant"]>, string> = {
   primary:
-    "bg-white text-slate-950 shadow-[0_18px_45px_-24px_rgba(255,255,255,0.8)] hover:bg-cyan-100",
+    "bg-[color:var(--button-primary-background)] text-[color:var(--button-primary-foreground)] shadow-[0_18px_45px_-24px_rgba(15,23,42,0.25)] hover:bg-[color:var(--button-primary-hover)]",
   secondary:
-    "border border-white/15 bg-white/10 text-white backdrop-blur-xl hover:border-cyan-300/40 hover:bg-white/14",
+    "border border-[color:var(--border-strong)] bg-[color:var(--surface-pill)] text-[color:var(--text-primary)] backdrop-blur-xl hover:border-[color:var(--accent-strong)] hover:bg-[color:var(--surface-pill-hover)]",
   ghost:
-    "border border-transparent bg-transparent text-slate-200 hover:border-white/15 hover:bg-white/8 hover:text-white",
+    "border border-transparent bg-transparent text-[color:var(--text-secondary)] hover:border-[color:var(--border-subtle)] hover:bg-[color:var(--surface-ghost-hover)] hover:text-[color:var(--text-primary)]",
 };
 
 export function ButtonLink({
@@ -22,7 +22,7 @@ export function ButtonLink({
   return (
     <a
       className={[
-        "inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950",
+        "inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--focus-offset)]",
         variantClasses[variant],
         className,
       ]

@@ -12,18 +12,18 @@ export function AboutSection() {
       description={about.description}
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-        <article className="rounded-3xl border border-white/10 bg-white/[0.04] p-8">
-          <p className="text-lg leading-8 text-slate-200">{about.intro}</p>
+        <article className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-card)] p-8">
+          <p className="text-lg leading-8 text-[color:var(--text-secondary)]">{about.intro}</p>
         </article>
 
         <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
           {about.highlights.map((item) => (
             <article
               key={item.title}
-              className="rounded-3xl border border-white/10 bg-slate-900/80 p-6"
+              className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-panel)] p-6"
             >
-              <h3 className="text-lg font-medium text-white">{item.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-300">
+              <h3 className="text-lg font-medium text-[color:var(--text-primary)]">{item.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-[color:var(--text-muted)]">
                 {item.description}
               </p>
             </article>
