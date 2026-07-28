@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Manrope } from "next/font/google";
 import { SiteHeader } from "@/components/layout/site-header";
 import "./globals.css";
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-});
-
-const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Benjamín Inostroza | Portafolio",
@@ -26,9 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body
-        className={`${manrope.variable} ${jetBrainsMono.variable} bg-slate-950 text-slate-100 antialiased`}
-      >
+      <body className="bg-slate-950 text-slate-100 antialiased">
         <a
           href="#hero"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-slate-950"
