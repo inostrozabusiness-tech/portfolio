@@ -24,9 +24,6 @@ export function ExperienceSection() {
                   <p className="mt-2 text-sm font-medium text-cyan-200">{item.subtitle}</p>
                 ) : null}
               </div>
-              {item.period ? (
-                <p className="text-sm text-slate-400">{item.period}</p>
-              ) : null}
             </div>
 
             <p className="mt-4 text-base leading-7 text-slate-300">{item.description}</p>
