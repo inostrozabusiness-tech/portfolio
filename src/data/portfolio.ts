@@ -37,9 +37,9 @@ export type ContactLink = {
 };
 
 const contactDetails = {
-  email: "",
+  email: null,
   github: "https://github.com/inostrozabusiness-tech",
-  linkedin: "",
+  linkedin: null,
   cv: "/documents/benjamin-inostroza-cv.pdf",
 };
 
