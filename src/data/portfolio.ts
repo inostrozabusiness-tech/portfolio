@@ -8,6 +8,14 @@ export type HighlightItem = {
   description: string;
 };
 
+export type HeroAction = {
+  label: string;
+  href: string;
+  variant: "primary" | "secondary" | "ghost";
+  download?: boolean;
+  ariaLabel?: string;
+};
+
 export type TimelineItem = {
   title: string;
   subtitle?: string;
@@ -32,35 +40,62 @@ export const navigationItems: NavigationItem[] = [
 ];
 
 export const heroContent = {
-  eyebrow: "Portafolio personal",
+  eyebrow: "Software engineer portfolio",
   title: "Benjamín Inostroza",
   subtitle:
-    "Ingeniería en Informática con base en Automatización y Robótica Industrial.",
+    "Estudiante de Ingeniería en Informática | Automatización y Robótica Industrial | Desarrollo de Software | IA",
   description:
-    "Una presencia digital sobria, premium y preparada para presentar experiencia, proyectos y visión tecnológica con claridad.",
-  primaryAction: {
-    label: "Ver proyectos",
-    href: "#projects",
-  },
-  secondaryAction: {
-    label: "Ir a contacto",
-    href: "#contact",
-  },
+    "Hero de alto impacto, minimalista y escalable para comunicar una identidad profesional sólida desde el primer scroll.",
+  actions: [
+    {
+      label: "Ver proyectos",
+      href: "#projects",
+      variant: "primary",
+      ariaLabel: "Ver la sección de proyectos",
+    },
+    {
+      label: "Descargar CV",
+      href: "/documents/benjamin-inostroza-cv.pdf",
+      variant: "secondary",
+      download: true,
+      ariaLabel: "Descargar el currículum en PDF",
+    },
+    {
+      label: "Contacto",
+      href: "#contact",
+      variant: "ghost",
+      ariaLabel: "Ir a la sección de contacto",
+    },
+  ] satisfies HeroAction[],
+  metrics: [
+    {
+      label: "Enfoque",
+      value: "Software, automatización e IA aplicados a soluciones reales.",
+    },
+    {
+      label: "Diseño",
+      value: "Interfaz premium con énfasis en claridad, jerarquía y elegancia.",
+    },
+    {
+      label: "Escalabilidad",
+      value: "Base modular preparada para iterar contenido y nuevas secciones.",
+    },
+  ],
   highlights: [
     {
-      title: "Perfil híbrido",
+      title: "Automatización",
       description:
-        "Cruza software, automatización y pensamiento sistémico en una misma narrativa profesional.",
+        "Una base industrial que aporta criterio operativo, integración y visión de sistemas.",
     },
     {
-      title: "Diseño enfocado",
+      title: "Desarrollo",
       description:
-        "Base visual minimalista para evolucionar el contenido sin rehacer la experiencia completa.",
+        "Arquitectura frontend limpia para mostrar proyectos, experiencia y evolución técnica.",
     },
     {
-      title: "Arquitectura escalable",
+      title: "IA",
       description:
-        "Secciones reutilizables y datos desacoplados para crecer con nuevas experiencias y logros.",
+        "Espacio preparado para posicionar iniciativas y capacidades ligadas a inteligencia artificial.",
     },
   ] satisfies HighlightItem[],
 };
