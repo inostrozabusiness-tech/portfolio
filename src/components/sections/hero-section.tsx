@@ -3,13 +3,14 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/layout/container";
 import { ScrollIndicator } from "@/components/ui/scroll-indicator";
-import { heroContent } from "@/data/portfolio";
+import { portfolio } from "@/data/portfolio";
 import { HeroActions } from "./hero-actions";
 import { HeroBackground } from "./hero-background";
 import { HeroHighlights } from "./hero-highlights";
 
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
+  const { hero } = portfolio;
 
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
@@ -34,7 +35,7 @@ export function HeroSection() {
           >
             <motion.div variants={fadeUp} className="space-y-6">
               <span className="inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-cyan-100">
-                {heroContent.eyebrow}
+                {hero.eyebrow}
               </span>
 
               <div className="space-y-4">
@@ -42,26 +43,26 @@ export function HeroSection() {
                   id="hero-title"
                   className="max-w-4xl text-5xl font-semibold tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl"
                 >
-                  {heroContent.title}
+                  {hero.title}
                 </h1>
                 <p className="max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl lg:text-2xl">
-                  {heroContent.subtitle}
+                  {portfolio.professionalTitle}
                 </p>
                 <p className="max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
-                  {heroContent.description}
+                  {hero.description}
                 </p>
               </div>
             </motion.div>
 
             <motion.div variants={fadeUp} className="mt-8">
-              <HeroActions actions={heroContent.actions} />
+              <HeroActions actions={hero.actions} />
             </motion.div>
 
             <motion.div
               variants={fadeUp}
               className="mt-8 grid gap-3 text-sm text-slate-300 sm:grid-cols-3"
             >
-              {heroContent.metrics.map((metric) => (
+              {hero.metrics.map((metric) => (
                 <div
                   key={metric.label}
                   className="rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-4"
@@ -85,13 +86,13 @@ export function HeroSection() {
           >
             <div className="rounded-[32px] border border-white/10 bg-white/[0.05] p-6 backdrop-blur-2xl">
               <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-200">
-                Perfil técnico
+                {hero.profileHeading}
               </p>
               <p className="mt-4 text-xl font-medium leading-8 text-white">
-                Portafolio diseñado para proyectar una presencia sólida en software, automatización e IA desde la primera interacción.
+                {hero.profileSummary}
               </p>
             </div>
-            <HeroHighlights items={heroContent.highlights} />
+            <HeroHighlights items={hero.highlights} />
           </motion.div>
         </div>
       </Container>

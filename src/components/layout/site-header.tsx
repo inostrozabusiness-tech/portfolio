@@ -1,4 +1,4 @@
-import { navigationItems } from "@/data/portfolio";
+import { navigationItems, portfolio } from "@/data/portfolio";
 import { Container } from "./container";
 
 export function SiteHeader() {
@@ -9,7 +9,7 @@ export function SiteHeader() {
           href="#hero"
           className="text-sm font-semibold tracking-[0.24em] text-white transition hover:text-cyan-300"
         >
-          BENJAMÍN INOSTROZA
+          {portfolio.fullName.toUpperCase()}
         </a>
 
         <nav aria-label="Navegación principal" className="hidden md:block">

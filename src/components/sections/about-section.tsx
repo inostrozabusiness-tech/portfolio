@@ -1,21 +1,23 @@
 import { SectionShell } from "@/components/ui/section-shell";
-import { aboutContent } from "@/data/portfolio";
+import { portfolio } from "@/data/portfolio";
 
 export function AboutSection() {
+  const { about } = portfolio;
+
   return (
     <SectionShell
       id="about"
       eyebrow="Perfil"
-      title={aboutContent.title}
-      description={aboutContent.description}
+      title={about.title}
+      description={about.description}
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <article className="rounded-3xl border border-white/10 bg-white/[0.04] p-8">
-          <p className="text-lg leading-8 text-slate-200">{aboutContent.intro}</p>
+          <p className="text-lg leading-8 text-slate-200">{about.intro}</p>
         </article>
 
         <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-          {aboutContent.highlights.map((item) => (
+          {about.highlights.map((item) => (
             <article
               key={item.title}
               className="rounded-3xl border border-white/10 bg-slate-900/80 p-6"

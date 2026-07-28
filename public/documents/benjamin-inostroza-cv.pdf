@@ -1,4 +1,5 @@
 %PDF-1.4
+%âãÏÓ
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -6,36 +7,79 @@ endobj
 << /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
 endobj
 4 0 obj
-<< /Length 232 >>
-stream
-BT
-/F1 24 Tf
-72 728 Td
-(Benjamin Inostroza - Curriculum Vitae) Tj
-/F1 13 Tf
-0 -28 Td
-(Documento base disponible para descarga desde el hero.) Tj
-0 -22 Td
-(Actualiza este archivo con la version final del CV cuando este lista.) Tj
-ET
-endstream
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 5 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<< /Length 1161 >>
+stream
+BT
+/F1 22 Tf
+72 770 Td
+(Benjamín Inostroza) Tj
+0 -18 Td
+/F1 13 Tf
+(Desarrollador de software | Automatización y Robótica Industrial | IA aplicada) Tj
+0 -15 Td
+/F1 11 Tf
+(Perfil profesional) Tj
+0 -15 Td
+/F1 10 Tf
+(Estudiante de Ingeniería en Informática con foco en frontend, experiencia de usuario) Tj
+0 -15 Td
+/F1 10 Tf
+(y soluciones tecnológicas aplicadas a problemas reales.) Tj
+0 -15 Td
+/F1 11 Tf
+(Educación) Tj
+0 -15 Td
+/F1 10 Tf
+(- Ingeniería en Informática) Tj
+0 -15 Td
+/F1 10 Tf
+(- Automatización y Robótica Industrial) Tj
+0 -15 Td
+/F1 11 Tf
+(Experiencia) Tj
+0 -15 Td
+/F1 10 Tf
+(- Proyectos académicos y personales en desarrollo de software) Tj
+0 -15 Td
+/F1 10 Tf
+(- Construcción de interfaces con Next.js, React y TypeScript) Tj
+0 -15 Td
+/F1 10 Tf
+(- Interés en automatización de procesos e inteligencia artificial aplicada) Tj
+0 -15 Td
+/F1 11 Tf
+(Tecnologías) Tj
+0 -15 Td
+/F1 10 Tf
+(Next.js, React, TypeScript, Tailwind CSS, Git, GitHub y Framer Motion) Tj
+0 -15 Td
+/F1 11 Tf
+(Contacto profesional) Tj
+0 -15 Td
+/F1 10 Tf
+(GitHub: https://github.com/inostrozabusiness-tech) Tj
+0 -15 Td
+/F1 10 Tf
+(Portafolio: /documents/benjamin-inostroza-cv.pdf) Tj
+ET
+endstream
 endobj
 xref
 0 6
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000241 00000 n 
-0000000523 00000 n 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000247 00000 n 
+0000000317 00000 n 
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-593
+1530
 %%EOF

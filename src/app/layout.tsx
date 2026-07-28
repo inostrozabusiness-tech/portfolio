@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/layout/site-header";
+import { portfolio } from "@/data/portfolio";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Benjamín Inostroza | Portafolio",
-  description:
-    "Portafolio personal de Benjamín Inostroza, estudiante de Ingeniería en Informática con formación en Automatización y Robótica Industrial.",
+  title: `${portfolio.fullName} | Portafolio`,
+  description: portfolio.description,
 };
 
 export default function RootLayout({

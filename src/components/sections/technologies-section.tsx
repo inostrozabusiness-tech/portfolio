@@ -1,17 +1,19 @@
 import { SectionShell } from "@/components/ui/section-shell";
 import { Tag } from "@/components/ui/tag";
-import { technologyGroups } from "@/data/portfolio";
+import { portfolio } from "@/data/portfolio";
 
 export function TechnologiesSection() {
+  const { technologies } = portfolio;
+
   return (
     <SectionShell
       id="technologies"
-      eyebrow="Stack"
-      title="Tecnologías"
-      description="Organización por áreas para comunicar competencias y herramientas sin saturar la experiencia visual."
+      eyebrow={technologies.eyebrow}
+      title={technologies.title}
+      description={technologies.description}
     >
-      <div className="grid gap-4 lg:grid-cols-3">
-        {technologyGroups.map((group) => (
+      <div className="grid gap-4 lg:grid-cols-2">
+        {technologies.groups.map((group) => (
           <article
             key={group.title}
             className="rounded-3xl border border-white/10 bg-white/[0.04] p-6"
