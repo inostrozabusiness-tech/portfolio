@@ -1,3 +1,5 @@
+import { getProjects, type ProjectItem } from "./projects";
+
 export type NavigationItem = {
   label: string;
   href: string;
@@ -27,6 +29,13 @@ export type TimelineItem = {
 export type TechnologyGroup = {
   title: string;
   items: string[];
+};
+
+export type ProjectsSectionData = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  items: ProjectItem[];
 };
 
 export type ContactLink = {
@@ -215,21 +224,9 @@ export const portfolio = {
     eyebrow: "Trabajo destacado",
     title: "Proyectos",
     description:
-      "Selección de trabajo reciente para mostrar enfoque técnico, estructura de implementación y presentación profesional.",
-    items: [
-      {
-        title: "Portafolio profesional en Next.js",
-        subtitle: "Proyecto personal",
-        description:
-          "Aplicación creada para centralizar información profesional desde una sola fuente de datos y presentar perfil, experiencia, formación y stack técnico en una interfaz moderna.",
-        bullets: [
-          "Next.js 15, React 19 y TypeScript.",
-          "Composición modular por secciones reutilizables.",
-          "Diseño oscuro con énfasis en jerarquía visual y claridad.",
-        ],
-      },
-    ] satisfies TimelineItem[],
-  },
+      "Selección curada de proyectos con enfoque en experiencia visual, claridad técnica y una estructura preparada para evolucionar hacia sincronización automática desde GitHub.",
+    items: getProjects(),
+  } satisfies ProjectsSectionData,
   technologies: {
     eyebrow: "Stack",
     title: "Tecnologías",
