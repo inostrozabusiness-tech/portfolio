@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: portfolio.fullName,
-  keywords: siteConfig.keywords,
+  keywords: [...siteConfig.keywords],
   authors: [{ name: portfolio.fullName, url: siteConfig.url }],
   creator: portfolio.fullName,
   publisher: portfolio.fullName,
