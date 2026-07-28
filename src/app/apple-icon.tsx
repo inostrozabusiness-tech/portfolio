@@ -29,8 +29,9 @@ export default function AppleIcon() {
             width: "78%",
             borderRadius: "36px",
             border: "4px solid rgba(248, 250, 252, 0.14)",
-            background:
-              "radial-gradient(circle at top, rgba(34, 211, 238, 0.28), transparent 55%), rgba(15, 23, 42, 0.82)",
+            backgroundColor: "rgba(15, 23, 42, 0.82)",
+            backgroundImage:
+              "radial-gradient(circle at top, rgba(34, 211, 238, 0.28), transparent 55%)",
             alignItems: "center",
             justifyContent: "center",
           }}
