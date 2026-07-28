@@ -38,6 +38,6 @@ export const siteConfig = {
   },
   links: {
     github: portfolio.github,
-    cv: new URL(portfolio.cv, `${siteUrl}/`).toString(),
+    cv: new URL(portfolio.cv, siteUrl).toString(),
   },
 } as const;

@@ -15,7 +15,7 @@ export function getPersonSchema() {
     url: siteConfig.url,
     description: siteConfig.description,
     jobTitle: portfolio.professionalTitle,
-    image: new URL(siteConfig.socialPreview.url, `${siteConfig.url}/`).toString(),
+    image: new URL(siteConfig.socialPreview.url, siteConfig.url).toString(),
     sameAs,
     knowsAbout,
   };

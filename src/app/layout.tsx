@@ -6,7 +6,7 @@ import { getPersonSchema } from "@/lib/schema";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`${siteConfig.url}/`),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `%s | ${portfolio.fullName}`,
