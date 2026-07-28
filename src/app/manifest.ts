@@ -6,16 +6,29 @@ export default function manifest(): MetadataRoute.Manifest {
     name: siteConfig.title,
     short_name: portfolioName(siteConfig.name),
     description: siteConfig.description,
-    start_url: "/",
+    id: siteConfig.canonicalPath,
+    start_url: siteConfig.canonicalPath,
+    scope: siteConfig.canonicalPath,
     display: "standalone",
     background_color: siteConfig.backgroundColor,
     theme_color: siteConfig.themeColor,
-    lang: "es",
+    lang: siteConfig.language,
+    categories: ["portfolio", "technology", "software development"],
     icons: [
+      {
+        src: "/favicon.ico",
+        sizes: "16x16 32x32",
+        type: "image/x-icon",
+      },
       {
         src: "/icon.svg",
         sizes: "any",
         type: "image/svg+xml",
+      },
+      {
+        src: "/apple-icon",
+        sizes: "180x180",
+        type: "image/png",
       },
     ],
   };

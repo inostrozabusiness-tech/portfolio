@@ -19,10 +19,15 @@ export const metadata: Metadata = {
   publisher: portfolio.fullName,
   category: "technology",
   alternates: {
-    canonical: "/",
+    canonical: siteConfig.canonicalPath,
   },
   manifest: "/manifest.webmanifest",
   referrer: "origin-when-cross-origin",
+  appleWebApp: {
+    capable: true,
+    title: portfolio.fullName,
+    statusBarStyle: "black-translucent",
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -31,13 +36,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
-    url: siteConfig.url,
+    url: siteConfig.links.home,
     siteName: siteConfig.siteName,
     title: siteConfig.title,
     description: siteConfig.description,
     images: [
       {
-        url: siteConfig.socialPreview.url,
+        url: siteConfig.socialPreview.absoluteUrl,
         width: siteConfig.socialPreview.width,
         height: siteConfig.socialPreview.height,
         alt: siteConfig.socialPreview.alt,
@@ -48,11 +53,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [siteConfig.socialPreview.url],
+    images: [siteConfig.twitterPreview.absoluteUrl],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -62,8 +68,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
     shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
   },
 };
 
@@ -82,7 +92,7 @@ export default function RootLayout({
   const personSchema = getPersonSchema();
 
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang={siteConfig.language} className="scroll-smooth">
       <body className="bg-slate-950 text-slate-100 antialiased">
         <script
           type="application/ld+json"

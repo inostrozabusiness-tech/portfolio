@@ -7,6 +7,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/api/"],
+      },
+      {
+        userAgent: "Googlebot-Image",
+        allow: "/",
       },
     ],
     sitemap: `${siteConfig.url}/sitemap.xml`,
