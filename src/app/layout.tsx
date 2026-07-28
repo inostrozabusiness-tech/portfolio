@@ -116,8 +116,8 @@ export default function RootLayout({
       className="scroll-smooth"
       suppressHydrationWarning
     >
-      <script dangerouslySetInnerHTML={{ __html: themeInitializerScript }} />
       <body className="bg-background text-foreground antialiased">
+        <script dangerouslySetInnerHTML={{ __html: themeInitializerScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
