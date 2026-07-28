@@ -44,36 +44,44 @@ const contactDetails = {
 };
 
 const contactLinks: ContactLink[] = [
-  contactDetails.email
-    ? {
-        label: "Correo",
-        href: `mailto:${contactDetails.email}`,
-        value: contactDetails.email,
-      }
-    : null,
-  contactDetails.github
-    ? {
-        label: "GitHub",
-        href: contactDetails.github,
-        value: "@inostrozabusiness-tech",
-      }
-    : null,
-  contactDetails.linkedin
-    ? {
-        label: "LinkedIn",
-        href: contactDetails.linkedin,
-        value: contactDetails.linkedin,
-      }
-    : null,
-  contactDetails.cv
-    ? {
-        label: "CV",
-        href: contactDetails.cv,
-        value: "Descargar currículum",
-        download: true,
-      }
-    : null,
-].filter((item): item is ContactLink => item !== null);
+  ...(contactDetails.email
+    ? [
+        {
+          label: "Correo",
+          href: `mailto:${contactDetails.email}`,
+          value: contactDetails.email,
+        },
+      ]
+    : []),
+  ...(contactDetails.github
+    ? [
+        {
+          label: "GitHub",
+          href: contactDetails.github,
+          value: "@inostrozabusiness-tech",
+        },
+      ]
+    : []),
+  ...(contactDetails.linkedin
+    ? [
+        {
+          label: "LinkedIn",
+          href: contactDetails.linkedin,
+          value: contactDetails.linkedin,
+        },
+      ]
+    : []),
+  ...(contactDetails.cv
+    ? [
+        {
+          label: "CV",
+          href: contactDetails.cv,
+          value: "Descargar currículum",
+          download: true,
+        },
+      ]
+    : []),
+];
 
 export const portfolio = {
   fullName: "Benjamín Inostroza",
